@@ -24,12 +24,21 @@ public class Login extends EnvTarget {
         wait.until(
                 ExpectedConditions.visibilityOfElementLocated(By.xpath("//img[@title='ParaBank']"))
         );
-        // finish and quit
-        driver.quit();
+        loginAction();
     }
 
-    @Test
     public void loginAction() {
         driver.findElement(By.xpath("//input[@name='username']")).sendKeys("hahahatest");
+        driver.findElement(By.cssSelector("input[name='password']")).sendKeys("hahahapassword");
+        driver.findElement(By.cssSelector("input[value='Log In']")).click();
+        // init WebDriverWait
+        Duration duration = Duration.ofSeconds(10);
+        WebDriverWait wait = new WebDriverWait(driver, duration);
+        // wait until the logo loaded and then continue
+        wait.until(
+                ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[@class='title']"))
+        );
+        // finish and quit
+        driver.quit();
     }
 }
