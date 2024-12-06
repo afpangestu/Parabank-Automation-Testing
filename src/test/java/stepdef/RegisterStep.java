@@ -10,10 +10,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pageobject.RegisterPage;
+import util.BaseUtil;
 
 import java.time.Duration;
 
-public class RegisterStep {
+public class RegisterStep extends BaseUtil {
     WebDriver driver;
 
     @Given("User is on parabank homepage")
@@ -26,7 +27,7 @@ public class RegisterStep {
         driver.manage().window().maximize();
 
         // get url
-        driver.get("https://parabank.parasoft.com/parabank/index.htm");
+        driver.get(baseUrl);
 
         // wait until
         Duration duration = Duration.ofSeconds(10);
@@ -69,13 +70,13 @@ public class RegisterStep {
     @And("User fill valid username and password")
     public void userFillValidUsernameAndPassword() {
         RegisterPage registerPage = new RegisterPage(driver);
-        registerPage.fillValidUsernameAndPassword("youk", "youk123");
+        registerPage.fillValidUsernameAndPassword("youk456", "youk456");
     }
 
     @And("User fill password confirmation")
     public void userFillPasswordConfirmation() {
         RegisterPage registerPage = new RegisterPage(driver);
-        registerPage.userFillPasswordConfirmation("youk123");
+        registerPage.userFillPasswordConfirmation("youk456");
     }
 
     @When("User click register button")
@@ -89,4 +90,5 @@ public class RegisterStep {
         RegisterPage registerPage = new RegisterPage(driver);
         registerPage.userRegisterSuccessfully();
     }
+    //span[@id='customer.username.errors']
 }

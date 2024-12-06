@@ -9,12 +9,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import pageobject.LoginPage;
+import util.BaseUtil;
+
 import java.time.Duration;
 import java.util.Random;
 
 
-public class LoginStep {
+public class LoginStep extends BaseUtil {
+    private static final Logger log = LoggerFactory.getLogger(LoginStep.class);
     WebDriver driver;
 
     @Given("User already on login page")
@@ -27,7 +32,7 @@ public class LoginStep {
         driver.manage().window().maximize();
 
         // get url
-        driver.get("https://parabank.parasoft.com/parabank/index.htm");
+        driver.get(baseUrl);
 
         // wait until
         Duration duration = Duration.ofSeconds(10);
@@ -40,8 +45,8 @@ public class LoginStep {
     @When("User fill username and password")
     public void userFillUsernameAndPassword() {
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.setUsername("gamingkale");
-        loginPage.setPassword("gamingkale");
+        loginPage.setUsername("youk456");
+        loginPage.setPassword("youk456");
     }
 
     @And("User click login button")
@@ -64,15 +69,15 @@ public class LoginStep {
     @When("User fill invalid username and password")
     public void userFillInvalidUsernameAndPassword() {
         Random random = new Random();
-        int userRandom = random.nextInt(10);
+        int userRandom = random.nextInt(1000);
         LoginPage loginPage = new LoginPage(driver);
         loginPage.setUsername("user"+userRandom);
-        loginPage.setPassword("pass"+userRandom);
+        loginPage.setPassword("passR"+userRandom);
     }
 
     @Then("User failed login and show message error")
     public void userFailedLoginAndShowMessageError() {
-
-
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.failedLogin();
     }
 }
