@@ -45,7 +45,7 @@ public class LoginStep extends BaseUtil {
     @When("User input username and password")
     public void userInputUsernameAndPassword() {
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.setUsername("daftar15");
+        loginPage.setUsername("daftar11");
         loginPage.setPassword("user123");
     }
 

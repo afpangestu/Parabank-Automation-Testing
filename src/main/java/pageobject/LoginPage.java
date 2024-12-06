@@ -40,5 +40,6 @@ public class LoginPage {
         wait.until(
                 ExpectedConditions.visibilityOfElementLocated(errorLoginMsg)
         );
+        driver.quit();
     }
 }

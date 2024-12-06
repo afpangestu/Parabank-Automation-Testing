@@ -1,5 +1,4 @@
 Feature: Register
-
   @register
   Scenario Outline: Verify user register
     Given User is on parabank homepage
@@ -18,7 +17,7 @@ Feature: Register
     # 4. miss-match password -> failed register
     | username | password  | confirm | result          |
     |          |           |         | failed          |
-    | daftar15 | user123   | user123 | passed          |
-    | daftar15 | user123   | user123 | user exists     |
-    | daftar15 | user123   | user    | pass missmatch  |
+    | daftar11 | user123   | user123 | passed          |
+    | daftar11 | user123   | user123 | user exists     |
+    | daftar11 | user123   | user    | pass missmatch  |
 
