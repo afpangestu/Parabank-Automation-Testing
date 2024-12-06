@@ -16,9 +16,9 @@ Feature: Register
     # 2. valid username, password, confirm password -> success register
     # 3. existing username -> failed register
     # 4. miss-match password -> failed register
-    | username | password  | confirm        | result          |
-    |          |           |                | failed          |
-    | daftar35 | user123   | user123        | passed          |
-    | daftar35 | user123   | user123        | user exists     |
-    | daftar35 | user123   | pass missmatch | pass missmatch  |
+    | username | password  | confirm | result          |
+    |          |           |         | failed          |
+    | daftar15 | user123   | user123 | passed          |
+    | daftar15 | user123   | user123 | user exists     |
+    | daftar15 | user123   | user    | pass missmatch  |
 
