@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features/Login.feature",
         glue = "stepdef",
         tags = "@login",
-        plugin = {"pretty", "html:src/test/resources/report/report.html"}
+        plugin = {"pretty", "html:src/test/resources/report/login_report.html"}
 )
 
 public class LoginRunner {}

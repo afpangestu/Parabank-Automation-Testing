@@ -29,6 +29,7 @@ public class RegisterPage {
     By txt_passconfirm_loc = By.xpath("//input[@id='repeatedPassword']");
     By btn_register_loc = By.xpath("//input[@value='Register']");
     By alert_success_register = By.xpath("//p[contains(text(),'Your account was created successfully. You are now')]");
+    By alert_failed_register = By.xpath("//span[@id='customer.username.errors']");
 
     // actions
     public void clickLinkRegister() {
@@ -58,7 +59,7 @@ public class RegisterPage {
         driver.findElement(txt_ssn_loc).sendKeys(ssn);
     }
 
-    public void fillValidUsernameAndPassword(String username, String password) {
+    public void fillUsernameAndPassword(String username, String password) {
         driver.findElement(txt_username_loc).sendKeys(username);
         driver.findElement(txt_password_loc).sendKeys(password);
     }
@@ -71,11 +72,17 @@ public class RegisterPage {
         driver.findElement(btn_register_loc).click();
     }
 
-    public void userRegisterSuccessfully() {
+    public void userVerifyRegister(String result) {
         Duration duration = Duration.ofSeconds(10);
         WebDriverWait wait = new WebDriverWait(driver, duration);
-        wait.until(
-                ExpectedConditions.visibilityOfElementLocated(alert_success_register)
-        );
+        if (result.equals("passed")) {
+            wait.until(
+                    ExpectedConditions.visibilityOfElementLocated(alert_success_register)
+            );
+        } else if (result.equals("failed")) {
+            wait.until(
+                    ExpectedConditions.visibilityOfElementLocated(alert_failed_register)
+            );
+        }
     }
 }

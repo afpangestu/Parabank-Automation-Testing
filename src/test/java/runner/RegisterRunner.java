@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features/Register.feature",
         glue = "stepdef",
         tags = "@register",
-        plugin = {"pretty", "html:src/test/resources/report/report.html"}
+        plugin = {"pretty", "html:src/test/resources/report/register_report.html"}
 )
 
 public class RegisterRunner { }
