@@ -29,8 +29,8 @@ public class RegisterPage {
     By txt_passconfirm_loc = By.xpath("//input[@id='repeatedPassword']");
     By btn_register_loc = By.xpath("//input[@value='Register']");
     By alert_success_register = By.xpath("//p[contains(text(),'Your account was created successfully. You are now')]");
-    By alert_username_exists = By.xpath("//span[@id='customer.username.errors']");
-    By alert_password_missmatch = By.xpath("//span[@id='repeatedPassword.errors']");
+    By alert_username_error = By.xpath("//span[@id='customer.username.errors']");
+    By alert_password_error = By.xpath("//span[@id='repeatedPassword.errors']");
 
     // actions
     public void clickLinkRegister() {
@@ -76,17 +76,15 @@ public class RegisterPage {
     public void userVerifyRegister(String result) {
         Duration duration = Duration.ofSeconds(10);
         WebDriverWait wait = new WebDriverWait(driver, duration);
-        if (result.equals("passed")) {
-            wait.until(
+        switch (result) {
+            case "passed" -> wait.until(
                     ExpectedConditions.visibilityOfElementLocated(alert_success_register)
             );
-        } else if (result.equals("failed")) {
-            wait.until(
-                    ExpectedConditions.visibilityOfElementLocated(alert_username_exists)
+            case "failed", "user exists" -> wait.until(
+                    ExpectedConditions.visibilityOfElementLocated(alert_username_error)
             );
-        } else {
-            wait.until(
-                    ExpectedConditions.visibilityOfElementLocated(alert_password_missmatch)
+            case "pass missmatch" -> wait.until(
+                    ExpectedConditions.visibilityOfElementLocated(alert_password_error)
             );
         }
         driver.quit();

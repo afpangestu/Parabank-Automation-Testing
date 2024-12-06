@@ -1,7 +1,7 @@
 Feature: Register
 
   @register
-  Scenario Outline: Verify user success register
+  Scenario Outline: Verify user register
     Given User is on parabank homepage
     When User click register link button
     Then User on register page
@@ -12,9 +12,13 @@ Feature: Register
     When User click register button
     Then User verify register <result>
     Examples:
-    | username  | password  | confirm | result  |
-    |           |           |         | failed  |
-    | pengguna1 | user123   | user123 | passed  |
-    | pengguna1 | user123   | user123 | failed  |
-    | pengguna1 | user123   | user123 | failed  |
+    # 1. blank -> failed register
+    # 2. valid username, password, confirm password -> success register
+    # 3. existing username -> failed register
+    # 4. miss-match password -> failed register
+    | username | password  | confirm        | result          |
+    |          |           |                | failed          |
+    | daftar35 | user123   | user123        | passed          |
+    | daftar35 | user123   | user123        | user exists     |
+    | daftar35 | user123   | pass missmatch | pass missmatch  |
 
