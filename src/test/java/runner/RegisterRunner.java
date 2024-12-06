@@ -8,8 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features/",
         glue = "stepdef",
-        tags = "@login",
-        plugin = {"pretty", "html:target/report.html"}
+        tags = "@register",
+        plugin = {"pretty", "html:src/test/resources/report/report.html"}
 )
-
-public class LoginRunner {}
+public class RegisterRunner { }

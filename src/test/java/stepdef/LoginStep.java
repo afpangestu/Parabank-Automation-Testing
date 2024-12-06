@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pageobject.LoginPage;
 import java.time.Duration;
+import java.util.Random;
 
 
 public class LoginStep {
@@ -39,8 +40,8 @@ public class LoginStep {
     @When("User fill username and password")
     public void userFillUsernameAndPassword() {
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.setUsername("usertest123");
-        loginPage.setPassword("testpassword");
+        loginPage.setUsername("gamingkale");
+        loginPage.setPassword("gamingkale");
     }
 
     @And("User click login button")
@@ -58,5 +59,20 @@ public class LoginStep {
                 ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[normalize-space()='Accounts Overview']"))
         );
         driver.quit();
+    }
+
+    @When("User fill invalid username and password")
+    public void userFillInvalidUsernameAndPassword() {
+        Random random = new Random();
+        int userRandom = random.nextInt(10);
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.setUsername("user"+userRandom);
+        loginPage.setPassword("pass"+userRandom);
+    }
+
+    @Then("User failed login and show message error")
+    public void userFailedLoginAndShowMessageError() {
+
+
     }
 }
