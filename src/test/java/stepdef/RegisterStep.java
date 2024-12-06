@@ -49,8 +49,8 @@ public class RegisterStep extends BaseUtil {
         registerPage.userOnRegisterPage();
     }
 
-    @When("User fill first name and last name")
-    public void userFillFirstNameAndLastName() {
+    @When("User fill name")
+    public void userFillName() {
         RegisterPage registerPage = new RegisterPage(driver);
         registerPage.setFirstNameAndLastName("You", "K");
     }
@@ -68,15 +68,15 @@ public class RegisterStep extends BaseUtil {
     }
 
     @And("^User fill (.*) and (.*)$")
-    public void userFillUsernameAndPassword(String username, String password) {
+    public void userFillUsernameAndPassword(String user, String pass) {
         RegisterPage registerPage = new RegisterPage(driver);
-        registerPage.fillUsernameAndPassword(username, password);
+        registerPage.fillUsernameAndPassword(user, pass);
     }
 
-    @And("User fill password confirmation")
-    public void userFillPasswordConfirmation() {
+    @And("^User fill (.*) confirmation$")
+    public void userFillPasswordConfirmation(String passConfirm) {
         RegisterPage registerPage = new RegisterPage(driver);
-        registerPage.userFillPasswordConfirmation("youk456");
+        registerPage.userFillPasswordConfirmation(passConfirm);
     }
 
     @When("User click register button")

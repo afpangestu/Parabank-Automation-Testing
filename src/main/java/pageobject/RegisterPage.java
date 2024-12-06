@@ -29,7 +29,8 @@ public class RegisterPage {
     By txt_passconfirm_loc = By.xpath("//input[@id='repeatedPassword']");
     By btn_register_loc = By.xpath("//input[@value='Register']");
     By alert_success_register = By.xpath("//p[contains(text(),'Your account was created successfully. You are now')]");
-    By alert_failed_register = By.xpath("//span[@id='customer.username.errors']");
+    By alert_username_exists = By.xpath("//span[@id='customer.username.errors']");
+    By alert_password_missmatch = By.xpath("//span[@id='repeatedPassword.errors']");
 
     // actions
     public void clickLinkRegister() {
@@ -81,8 +82,13 @@ public class RegisterPage {
             );
         } else if (result.equals("failed")) {
             wait.until(
-                    ExpectedConditions.visibilityOfElementLocated(alert_failed_register)
+                    ExpectedConditions.visibilityOfElementLocated(alert_username_exists)
+            );
+        } else {
+            wait.until(
+                    ExpectedConditions.visibilityOfElementLocated(alert_password_missmatch)
             );
         }
+        driver.quit();
     }
 }

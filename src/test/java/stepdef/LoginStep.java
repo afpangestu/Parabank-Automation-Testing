@@ -42,8 +42,8 @@ public class LoginStep extends BaseUtil {
         );
     }
 
-    @When("User fill username and password")
-    public void userFillUsernameAndPassword() {
+    @When("User input username and password")
+    public void userInputUsernameAndPassword() {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.setUsername("youk456");
         loginPage.setPassword("youk456");
@@ -66,8 +66,8 @@ public class LoginStep extends BaseUtil {
         driver.quit();
     }
 
-    @When("User fill invalid username and password")
-    public void userFillInvalidUsernameAndPassword() {
+    @When("User input invalid username and password")
+    public void userInputInvalidUsernameAndPassword() {
         Random random = new Random();
         int userRandom = random.nextInt(1000);
         LoginPage loginPage = new LoginPage(driver);

@@ -5,16 +5,16 @@ Feature: Register
     Given User is on parabank homepage
     When User click register link button
     Then User on register page
-    When User fill first name and last name
+    When User fill name
     And User fill address detail
     And User fill <username> and <password>
-    And User fill password confirmation
+    And User fill <confirm> confirmation
     When User click register button
     Then User verify register <result>
     Examples:
-    | username  | password  | result  |
-    | youk1     | youkYES   | passed  |
-    | youk2     | youkYES   | passed  |
-    | youk3     | youkYES   | passed  |
-    | youk4     | youkYES   | passed  |
-    | youk1     | youkYES   | failed  |
+    | username  | password  | confirm | result  |
+    |           |           |         | failed  |
+    | pengguna1 | user123   | user123 | passed  |
+    | pengguna1 | user123   | user123 | failed  |
+    | pengguna1 | user123   | user123 | failed  |
+
