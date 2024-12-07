@@ -12,4 +12,4 @@ import org.junit.runner.RunWith;
         plugin = {"pretty", "html:src/test/resources/report/report.html"}
 )
 
-public class CustomRunner {}
+public class CustomRunner { }
