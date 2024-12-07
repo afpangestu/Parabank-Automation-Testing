@@ -68,6 +68,7 @@ public class LoginStep extends BaseUtil {
 
     @When("User input invalid username and password")
     public void userInputInvalidUsernameAndPassword() {
+        // intiate random number
         Random random = new Random();
         int userRandom = random.nextInt(1000);
         LoginPage loginPage = new LoginPage(driver);
