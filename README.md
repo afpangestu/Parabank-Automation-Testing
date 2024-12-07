@@ -1,8 +1,8 @@
 <h1>ParaBank</h1>
 <hr><p>Automation Test with Selenium</p><h2>General Information</h2>
-<hr><ul>
-<li>ParaBank is a demo site used for demonstration of Parasoft software solutions. All materials herein are used solely for simulating a realistic online banking website.</li>
-</ul><h2>Technologies Used</h2>
+<hr>
+<p>ParaBank is a demo site used for demonstration of Parasoft software solutions. All materials herein are used solely for simulating a realistic online banking website.</p>
+<h2>Technologies Used</h2>
 <hr><ul>
 <li>Java</li>
 </ul><ul>
