@@ -9,8 +9,11 @@
 <li>Gherkin</li>
 </ul><h2>Screenshots</h2>
 <hr><p><img src="https://i.ibb.co.com/yRGVdth/thumbnail.png" alt=""></p><h2>Setup</h2>
-<hr><p>Selenium
-JUnit
-Cucumber
-Cucumber JUnit
-Cucumber Reporting</p>
+<hr>
+<ul>
+<li>selenium-java 4.27.0</li>
+<li>junit-jupiter-api 5.11.3</li>
+<li>cucumber-java 7.20.1</li>
+<li>cucumber-junit 7.20.1</li>
+<li>cucumber-junit 5.8.4</li>
+</ul>
