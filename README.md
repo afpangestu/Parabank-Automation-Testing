@@ -1,7 +1,7 @@
 # Parabank-Automation-Testing
 ### 🛠 Automated testing for ParaBank web 🛠
 
-📢 This repository contains an automated testing project for Swag Labs using Java, Cucumber, BDD, Selenium, Gherkin, ChromeDriver, JUnit 5, Maven, and IntelliJ IDE. The tests are designed to cover various scenarios on the ParaBank website (https://parabank.parasoft.com/parabank/index.htm).
+📢 This repository contains an automated testing project for ParaBank using Java, Cucumber, BDD, Selenium, Gherkin, ChromeDriver, JUnit 5, Maven, and IntelliJ IDE. The tests are designed to cover various scenarios on the ParaBank website (https://parabank.parasoft.com/parabank/index.htm).
 
 ## Table of Contents
 
@@ -16,11 +16,11 @@
 
 ## Introduction
 
-Test automation is the process of using software tools and frameworks to automate test execution, compare actual outcomes to expected outcomes, and generate test reports. This helps to increase efficiency, accuracy, and repeatability of testing processes, as well as reducing the time and costs associated with manual testing. <br><br>In here we are going to test ParaBank (https://parabank.parasoft.com/parabank/index.htm). We are going to use tools and frameworks like Cucumber BDD (Behavior-driven development) with Selenium for the automation. This project focuses on automating tests for the Swag Labs website using Cucumber BDD and Selenium.
+Test automation is the process of using software tools and frameworks to automate test execution, compare actual outcomes to expected outcomes, and generate test reports. This helps to increase efficiency, accuracy, and repeatability of testing processes, as well as reducing the time and costs associated with manual testing. <br><br>In here we are going to test ParaBank (https://parabank.parasoft.com/parabank/index.htm). We are going to use tools and frameworks like Cucumber BDD (Behavior-driven development) with Selenium for the automation. This project focuses on automating tests for the ParaBank website using Cucumber BDD and Selenium.
 
 ## Scope
 
-The project covers the following areas of the Swag Labs website:
+The project covers the following areas of the ParaBank website:
 
 - Register page
 - Login page
@@ -36,7 +36,7 @@ The project covers the following areas of the Swag Labs website:
 
 ## Tools and Technologies Used
 
-This test automation project for Swag Labs utilizes a variety of tools and technologies to streamline the testing process and ensure efficient and accurate results.
+This test automation project for  Labs utilizes a variety of tools and technologies to streamline the testing process and ensure efficient and accurate results.
 
 - **Java**: The primary programming language used for writing the test automation code.
 
@@ -59,7 +59,7 @@ These technologies are combined to create an effective testing framework that au
 
 ## Test Cases
 
-The test cases are written in third-party platform using [Qase](https://qase.io/). Each test case covers various aspects of the Swag Labs website, ensuring comprehensive coverage.
+The test cases are written in third-party platform using [Qase](https://qase.io/). Each test case covers various aspects of the ParaBank website, ensuring comprehensive coverage.
 
 ## Installation
 
