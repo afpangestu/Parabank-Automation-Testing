@@ -1,0 +1,31 @@
+{
+  "mode": "testops",
+  "fallback": "off",
+  "debug": true,
+  "report": {
+    "driver": "local",
+    "connection": {
+      "local": {
+        "path": "./build/qase-report",
+        "format": "json"
+      }
+    }
+  },
+  "testops": {
+    "api": {
+      "token": "1fa7f8b5e0ca1ceed999b0c88e14c87bd9d08feb6bc21974a92faace9da49b7e",
+      "host": "qase.io"
+    },
+    "run": {
+      "title": "Cucumber7 test run lala",
+      "description": "Cucumber7 examples lolo",
+      "complete": true
+    },
+    "defect": true,
+    "project": "PB",
+    "batch": {
+      "size": 200
+    },
+    "useV2": false
+  }
+}

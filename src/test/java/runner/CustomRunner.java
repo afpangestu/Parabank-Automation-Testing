@@ -1,15 +1,16 @@
 package runner;
 
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-import org.junit.runner.RunWith;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
+import org.testng.annotations.Test;
 
-@RunWith(Cucumber.class)
+//@RunWith(Cucumber.class)
+@Test
 @CucumberOptions(
-        features = "src/test/resources/features/",
+        features = {"src/test/resources/features/Register.feature", "src/test/resources/features/Login.feature"},
         glue = "stepdef",
         tags = "@register or @login",
-        plugin = {"pretty", "html:src/test/resources/report/report.html"}
+        plugin = {"io.qase.cucumber7.QaseEventListener"}
 )
 
-public class CustomRunner { }
+public class CustomRunner extends AbstractTestNGCucumberTests { }
